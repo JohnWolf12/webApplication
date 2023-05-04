@@ -21,6 +21,7 @@ class UserAdmin(BaseUserAdmin):
 
 class ZdjecieInline(admin.TabularInline):
     model = Zdjecie
+    extra = 0
 
 
 class OgloszenieAdmin(admin.ModelAdmin):

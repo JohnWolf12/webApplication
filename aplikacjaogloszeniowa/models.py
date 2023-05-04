@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Uzytkownik(models.Model):
@@ -13,6 +15,17 @@ class Uzytkownik(models.Model):
     class Meta:
         verbose_name = "użytkownik"
         verbose_name_plural = "użytkownicy"
+
+
+@receiver(post_save, sender=User)
+def create_user_uzytkownik(sender, instance, created, **kwargs):
+    if created:
+        Uzytkownik.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_uzytkownik(sender, instance, **kwargs):
+    instance.uzytkownik.save()
 
 
 class Kategoria(models.Model):

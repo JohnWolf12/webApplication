@@ -1,0 +1,31 @@
+{% extends "aplikacjaogloszeniowa/base.html" %}
+
+{% block title %}Strona główna{% endblock %}
+
+{% block content %}
+    <div class="container px-4">
+        <form class="form-inline mb-md-5">
+            <div class="input-group input-group-lg">
+                <input class="form-control w-50 py-3" type="search" placeholder="Wprowadź nazwę">
+                <select class="form-select w-25 py-3">
+                    <option selected>Wszystkie kategorie</option>
+                    {% for kategoria in kategorie %}
+                        <option value="1">{{ kategoria }}</option>
+                    {% endfor %}
+                </select>
+                <button class="btn btn-outline-secondary px-lg-5 py-3" type="submit">Szukaj</button>
+            </div>
+        </form>
+        <div class="row row-cols-2 row row-cols-sm-3  row-cols-md-4">
+            {% for kategoria in kategorie %}
+                <div class="col mb-3">
+                    <div class="card text-center shadow">
+                        <div class="card-body">
+                            <a class="stretched-link" href="#">{{ kategoria }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
