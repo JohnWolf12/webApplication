@@ -21,12 +21,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Logowanie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'rejestracja' %}">Rejestracja</a>
-                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Twój profil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'wylogowanie' %}">Wyloguj</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logowanie' %}">Logowanie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'rejestracja' %}">Rejestracja</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
