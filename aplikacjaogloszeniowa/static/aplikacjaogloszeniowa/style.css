@@ -54,6 +54,11 @@ footer
 }
 .btn:hover
 {
-    background-color: #14213D;
-    color: #FCA311;
+    background-color: #fdb541;
+    color: #14213D;
+}
+
+.blad
+{
+    color: red;
 }

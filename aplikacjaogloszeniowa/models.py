@@ -6,8 +6,8 @@ from django.dispatch import receiver
 
 class Uzytkownik(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    telefon = models.CharField(max_length=9)
-    miejscowosc = models.CharField(max_length=50)
+    telefon = models.CharField(blank=True, max_length=9)
+    miejscowosc = models.CharField(blank=True, max_length=50)
 
     def __str__(self):
         return self.user.username
