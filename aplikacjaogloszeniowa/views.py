@@ -28,25 +28,6 @@ def register_view(request):
     return render(request, 'aplikacjaogloszeniowa/register.html', context)
 
 
-def login_view(request):
-    if request.method == 'POST':
-        loginform = LoginForm()
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect("/")
-        else:
-            messages.error(request, "Błędna nazwa użytkownia lub hasło")
-    else:
-        loginform = LoginForm()
-    context = {
-        'loginform': loginform
-    }
-    return render(request, 'aplikacjaogloszeniowa/login.html', context)
-
-
 def logout_view(request):
     logout(request)
     return redirect("/")

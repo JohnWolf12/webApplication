@@ -12,14 +12,15 @@
                 <form method="POST">
                     {% csrf_token %}
                     <div class="mb-2">
-                        {{ loginform.username.label_tag }}
-                        {{ loginform.username }}
-                        <div class="blad">{{ loginform.username.errors }}</div>
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                        <div class="blad">{{ form.username.errors }}</div>
                     </div>
                     <div class="mb-4">
-                        {{ loginform.password.label_tag }}
-                        {{ loginform.password }}
-                        <div class="blad">{{ loginform.password.errors }}</div>
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                        <div class="blad">{{ form.password.errors }}</div>
+                        <div class="blad">{{ form.non_field_errors }}</div>
                     </div>
                     <div class="text-center">
                         <button class="btn btn-outline-secondary btn-lg w-50" type="submit">Zaloguj się</button>
