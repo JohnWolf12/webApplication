@@ -25,7 +25,6 @@ footer
 }
 .card a
 {
-    font-size: 1.04rem;
     color: #14213D;
     text-decoration: none;
 }
@@ -61,4 +60,9 @@ footer
 .blad
 {
     color: red;
+}
+
+.edytowanie:hover, .nazwa:hover, .usuwanie:hover
+{
+    color: #FCA311;
 }
