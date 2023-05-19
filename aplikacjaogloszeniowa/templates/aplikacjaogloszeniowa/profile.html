@@ -1,0 +1,34 @@
+{% extends "aplikacjaogloszeniowa/base.html" %}
+
+{% block title %}Profil{% endblock %}
+
+{% block content %}
+    <div class="container px-4 mb-5">
+        <div class="card shadow mb-4">
+                <div class="card-body">
+                    <h4>Witaj, {{ user.username }}</h4>
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col">
+                            <p class="mb-0">Imię i Nazwisko:</p>
+                            <p>{% if user.first_name or user.last_name %} {{ user.first_name }} {{ user.last_name }} {% else %} - {% endif %}</p>
+                        </div>
+                        <div class="col">
+                            <p class="mb-0">Adres email: </p>
+                            <p>{{ user.email }}</p>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <p class="mb-0">Miejscowość:</p>
+                            <p>{% if user.uzytkownik.miejscowosc %} {{ user.uzytkownik.miejscowosc }} {% else %} - {% endif %}</p>
+                        </div>
+                        <div class="col">
+                            <p class="mb-0">Numer telefonu:</p>
+                            <p>{% if user.uzytkownik.telefon %} {{ user.uzytkownik.telefon }} {% else %} - {% endif %}</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-secondary btn-lg" href="{% url 'edycjaProfilu' %}">Edytuj profil</a>
+                </div>
+            </div>
+        <a class="btn btn-outline-secondary btn-lg" href="#">Stwórz nowe ogłoszenie</a>
+    </div>
+{% endblock %}

@@ -7,7 +7,8 @@ from .forms import LoginForm
 urlpatterns = [
     path('', views.index, name='index'),
     path('rejestracja/', views.register_view, name='rejestracja'),
-    path('logowanie/', LoginView.as_view(template_name='aplikacjaogloszeniowa/login.html', authentication_form=LoginForm, next_page='/'), name='logowanie'),
+    path('logowanie/', LoginView.as_view(template_name='aplikacjaogloszeniowa/login.html', authentication_form=LoginForm, next_page='profil'), name='logowanie'),
     path('wylogowanie/', views.logout_view, name='wylogowanie'),
-
+    path('profil/', views.profile_view, name='profil'),
+    path('profil/edycja/', views.profileEdit_view, name='edycjaProfilu')
 ]
