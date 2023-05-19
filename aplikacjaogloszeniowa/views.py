@@ -1,8 +1,7 @@
-from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import RegisterForm, LoginForm
+from .forms import RegisterForm
 from .models import Kategoria
 
 

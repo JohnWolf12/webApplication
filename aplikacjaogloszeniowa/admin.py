@@ -4,9 +4,7 @@ from django.contrib.auth.models import User
 
 from .models import Uzytkownik
 from .models import Kategoria
-from .models import Podkategoria
 from .models import Ogloszenie
-from .models import Zdjecie
 
 
 class UzytkownikInline(admin.StackedInline):
@@ -19,14 +17,8 @@ class UserAdmin(BaseUserAdmin):
     inlines = (UzytkownikInline,)
 
 
-class ZdjecieInline(admin.TabularInline):
-    model = Zdjecie
-    extra = 0
-
-
 class OgloszenieAdmin(admin.ModelAdmin):
     list_display = ('nazwa', 'uzytkownik')
-    inlines = (ZdjecieInline,)
 
 
 class PodkategoriaAdmin(admin.ModelAdmin):
@@ -36,5 +28,4 @@ class PodkategoriaAdmin(admin.ModelAdmin):
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 admin.site.register(Kategoria)
-admin.site.register(Podkategoria, PodkategoriaAdmin)
 admin.site.register(Ogloszenie, OgloszenieAdmin)
