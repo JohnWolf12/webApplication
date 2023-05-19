@@ -1,9 +1,8 @@
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
-from .forms import RegisterForm, UpdateUserForm, UpdateUzytkownikForm
-from .models import Kategoria
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import RegisterForm, UpdateUserForm, UpdateUzytkownikForm, AnnouncementForm
+from .models import Kategoria, Ogloszenie
 
 
 def index(request):
@@ -19,7 +18,7 @@ def register_view(request):
         registerform = RegisterForm(request.POST)
         if registerform.is_valid():
             registerform.save()
-            return HttpResponseRedirect("/")
+            return redirect("/logowanie")
     else:
         registerform = RegisterForm()
     context = {
@@ -35,7 +34,12 @@ def logout_view(request):
 
 @login_required
 def profile_view(request):
-    return render(request, 'aplikacjaogloszeniowa/profile.html')
+    uzytkownik = request.user.uzytkownik
+    ogloszenia = Ogloszenie.objects.filter(uzytkownik=uzytkownik)
+    context = {
+        'ogloszenia': ogloszenia
+    }
+    return render(request, 'aplikacjaogloszeniowa/profile.html', context)
 
 
 @login_required
@@ -46,7 +50,7 @@ def profileEdit_view(request):
         if userform.is_valid() and uzytkownikform.is_valid():
             userform.save()
             uzytkownikform.save()
-            return HttpResponseRedirect("/profil")
+            return redirect("/profil")
     else:
         userform = UpdateUserForm(instance=request.user)
         uzytkownikform = UpdateUzytkownikForm(instance=request.user.uzytkownik)
@@ -55,3 +59,42 @@ def profileEdit_view(request):
         'uzytkownikform': uzytkownikform
     }
     return render(request, 'aplikacjaogloszeniowa/profileEdit.html', context)
+
+
+@login_required
+def addAnnouncement_view(request):
+    if request.method == 'POST':
+        addannouncementform = AnnouncementForm(request.POST)
+        addannouncementform.instance.uzytkownik = request.user.uzytkownik
+        if addannouncementform.is_valid():
+            addannouncementform.save()
+            return redirect("/profil")
+    else:
+        addannouncementform = AnnouncementForm()
+    context = {
+        'addannouncementform': addannouncementform
+    }
+    return render(request, 'aplikacjaogloszeniowa/announcementAdd.html', context)
+
+
+@login_required
+def editAnnouncement_view(request, id):
+    ogloszenie = get_object_or_404(Ogloszenie, pk=id, uzytkownik=request.user.uzytkownik)
+    if request.method == 'POST':
+        editannouncementform = AnnouncementForm(request.POST, instance=ogloszenie)
+        if editannouncementform.is_valid():
+            editannouncementform.save()
+            return redirect("/profil")
+    else:
+        editannouncementform = AnnouncementForm(instance=ogloszenie)
+    context = {
+        'editannouncementform': editannouncementform
+    }
+    return render(request, 'aplikacjaogloszeniowa/announcementEdit.html', context)
+
+
+@login_required
+def deleteAnnouncement_view(request, id):
+    uzytkownik = request.user.uzytkownik
+    Ogloszenie.objects.filter(uzytkownik=uzytkownik, id=id).delete()
+    return redirect('/profil')
