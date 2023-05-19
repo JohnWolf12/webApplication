@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7354d63d-9938-4424-acdc-0318ddda47e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/AnnouncementAdd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/announcementEdit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/static/aplikacjaogloszeniowa/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/static/aplikacjaogloszeniowa/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +108,7 @@
       <workItem from="1684175336129" duration="12279000" />
       <workItem from="1684348544026" duration="671000" />
       <workItem from="1684441033989" duration="5036000" />
-      <workItem from="1684482436686" duration="34492000" />
+      <workItem from="1684482436686" duration="35319000" />
     </task>
     <servers />
   </component>
