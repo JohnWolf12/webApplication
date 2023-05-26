@@ -18,5 +18,6 @@ urlpatterns = [
     path('profil/usuniecieogloszenia/<int:id>', views.deleteAnnouncement_view, name="usuniecieOgloszenia"),
     path('ogloszenia/', views.announcements_view, name="ogloszenia"),
     path('ogloszenie/<int:id>', views.announcement_view, name="ogloszenie"),
+    path('uzytkownik/<int:id>', views.user_view, name="uzytkownik"),
 
 ]
