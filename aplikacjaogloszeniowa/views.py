@@ -101,7 +101,7 @@ def deleteAnnouncement_view(request, id):
     return redirect('/profil')
 
 
-def announcement_view(request):
+def announcements_view(request):
     kategorie = Kategoria.objects.all()
     if 'q' in request.GET:
         nazwa = request.GET.get("q")
@@ -166,5 +166,13 @@ def announcement_view(request):
         "cenamax": cmax,
         "sort": sort,
         "page_obj": page_obj
+    }
+    return render(request, 'aplikacjaogloszeniowa/announcements.html', context)
+
+
+def announcement_view(request, id):
+    ogloszenie = get_object_or_404(Ogloszenie, pk=id)
+    context = {
+        'ogloszenie': ogloszenie
     }
     return render(request, 'aplikacjaogloszeniowa/announcement.html', context)
