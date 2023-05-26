@@ -1,0 +1,45 @@
+{% extends "aplikacjaogloszeniowa/base.html" %}
+
+{% block title %}Ogłoszenia{% endblock %}
+
+{% block content %}
+    <div class="container px-4 mb-5">
+        {% if page_obj %}
+            {% for ogloszenie in page_obj %}
+                <div class="ogloszenie card shadow mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col align-self-start">
+                                <a class="nazwa card-title stretched-link h3" href="#">{{ ogloszenie.nazwa }}</a>
+                                <p class="text-muted card-text h4">{{ ogloszenie.cena }} zł</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <nav>
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?q={{ nazwa }}&k={{ kategoria }}&page={{ page_obj.previous_page_number }}">
+                                <span>&laquo; Poprzednia</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li class="page-item">
+                        <a class="page-link" href="#">Strona {{ page_obj.number }} z {{ page_obj.paginator.num_pages }}</a>
+                    </li>
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?q={{ nazwa }}&k={{ kategoria }}&page={{ page_obj.next_page_number }}">
+                                <span>Następna &raquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% else %}
+            <p class="text-center h3 mt-3">Brak ogłoszeń</p>
+        {% endif %}
+    </div>
+{% endblock %}

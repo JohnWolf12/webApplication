@@ -23,7 +23,7 @@ footer
 {
     background-color: #14213D
 }
-.card a
+.card a, .pagination a
 {
     color: #14213D;
     text-decoration: none;
@@ -62,7 +62,14 @@ footer
     color: red;
 }
 
-.edytowanie:hover, .nazwa:hover, .usuwanie:hover
+.edytowanie:hover, .nazwa:hover, .usuwanie:hover, .pagination a:hover
 {
+    color: #FCA311;
+}
+
+.page-link:focus
+{
+    border-color: #FCA311;
+    box-shadow: 0px 0px 10px -3px #FCA311;
     color: #FCA311;
 }
