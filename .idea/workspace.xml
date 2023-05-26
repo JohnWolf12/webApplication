@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7354d63d-9938-4424-acdc-0318ddda47e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/announcements.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/announcement.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/announcement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/templates/aplikacjaogloszeniowa/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplikacjaogloszeniowa/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplikacjaogloszeniowa/views.py" afterDir="false" />

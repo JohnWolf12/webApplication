@@ -39,7 +39,7 @@
                                 <a class="nazwa h3" href="/ogloszenie/{{ogloszenie.id}}">{{ ogloszenie.nazwa }}</a>
                                 <p class="text-muted h4">{{ ogloszenie.cena }} zł</p>
                             </div>
-                            <div class="col align-self-end text-end">
+                            <div class="col col-12 align-self-end text-end">
                                 <a class="edytowanie h5 px-3" href="/profil/edycjaogloszenia/{{ogloszenie.id}}">Edytuj</a>
                                 <a class="usuwanie h5 px-3" href="/profil/usuniecieogloszenia/{{ogloszenie.id}}" onclick="return confirm('Czy na pewno chcesz usunąć ogłoszenie o nazwie \'{{ ogloszenie.nazwa }}\'')">Usuń</a>
                             </div>

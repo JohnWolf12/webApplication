@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegisterForm, UpdateUserForm, UpdateUzytkownikForm, AnnouncementForm
-from .models import Kategoria, Ogloszenie
+from .models import Kategoria, Ogloszenie, Uzytkownik
 
 
 def index(request):
@@ -36,7 +36,7 @@ def logout_view(request):
 @login_required
 def profile_view(request):
     uzytkownik = request.user.uzytkownik
-    ogloszenia = Ogloszenie.objects.filter(uzytkownik=uzytkownik)
+    ogloszenia = Ogloszenie.objects.filter(uzytkownik=uzytkownik).order_by('-id')
     context = {
         'ogloszenia': ogloszenia
     }
@@ -176,3 +176,13 @@ def announcement_view(request, id):
         'ogloszenie': ogloszenie
     }
     return render(request, 'aplikacjaogloszeniowa/announcement.html', context)
+
+
+def user_view(request, id):
+    uzytkownik = get_object_or_404(Uzytkownik, pk=id)
+    ogloszenia = Ogloszenie.objects.filter(uzytkownik=uzytkownik).order_by('-id')
+    context = {
+        'uzytkownik': uzytkownik,
+        'ogloszenia': ogloszenia
+    }
+    return render(request, 'aplikacjaogloszeniowa/user.html', context)
