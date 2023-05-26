@@ -32,12 +32,12 @@
         <a class="btn btn-outline-secondary btn-lg mb-4" href="{% url 'dodanieOgloszenia' %}">Stwórz nowe ogłoszenie</a>
         {% if ogloszenia %}
             {% for ogloszenie in ogloszenia %}
-                <div class="card shadow mb-4">
+                <div class="ogloszenie card shadow mb-4">
                     <div class="card-body">
                         <div class="row">
                             <div class="col align-self-start">
                                 <a class="nazwa h3" href="#">{{ ogloszenie.nazwa }}</a>
-                                <p class="h4">{{ ogloszenie.cena }} zł</p>
+                                <p class="text-muted h4">{{ ogloszenie.cena }} zł</p>
                             </div>
                             <div class="col align-self-end text-end">
                               <a class="edytowanie h5 px-3" href="/profil/edycjaogloszenia/{{ogloszenie.id}}">Edytuj</a>

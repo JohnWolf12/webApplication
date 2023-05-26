@@ -16,5 +16,6 @@ urlpatterns = [
     path('profil/dodanieogloszenia/', views.addAnnouncement_view, name="dodanieOgloszenia"),
     path('profil/edycjaogloszenia/<int:id>', views.editAnnouncement_view, name="usuniecieOgloszenia"),
     path('profil/usuniecieogloszenia/<int:id>', views.deleteAnnouncement_view, name="usuniecieOgloszenia"),
+    path('ogloszenia/', views.announcement_view, name="ogloszenia"),
 
 ]
