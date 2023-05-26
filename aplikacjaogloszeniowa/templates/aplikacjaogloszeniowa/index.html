@@ -6,9 +6,9 @@
     <div class="container px-4">
         <form class="form-inline mb-md-5" action="/ogloszenia/" method="get">
             <div class="input-group input-group-lg">
-                <input name="q" class="form-control bg-light py-3" type="search" placeholder="Wprowadź nazwę ogłoszenia">
+                <input name="q" class="form-control bg-light py-3" type="search" autocomplete="off" placeholder="Wprowadź nazwę ogłoszenia">
                 <select name="k" class="form-select py-3">
-                    <option value="0" selected>Wszystkie kategorie</option>
+                    <option value="" selected>Wszystkie kategorie</option>
                     {% for kategoria in kategorie %}
                         <option value="{{kategoria.id}}">{{ kategoria }}</option>
                     {% endfor %}
